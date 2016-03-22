@@ -1,5 +1,5 @@
 <?php
-namespace Extension\Symfony2;
+namespace Extension\Symfony;
 
 use Hal\Application\Config\Configuration;
 use Hal\Component\Bounds\Bounds;
@@ -9,7 +9,7 @@ use Hal\Component\Result\ResultCollection;
 require_once __DIR__ . '/CliSummaryReport.php';
 require_once __DIR__ . '/HtmlSummaryReport.php';
 
-class Symfony2Extension implements \Hal\Application\Extension\Extension {
+class SymfonyExtension implements \Hal\Application\Extension\Extension {
 
     /**
      * @var array
@@ -27,7 +27,7 @@ class Symfony2Extension implements \Hal\Application\Extension\Extension {
     {
 
         $this->datas = (object) array(
-            'symfony2' => (object) array(
+            'symfony' => (object) array(
                 'version' => '?'
             )
             ,'controllers' => (object) array(
@@ -135,7 +135,7 @@ class Symfony2Extension implements \Hal\Application\Extension\Extension {
             }
         }
 
-        // search Symfony2 version
+        // search Symfony version
         $finder = new Finder('cache', $config->getPath()->getExcludedDirs());
         $files = $finder->find($config->getPath()->getBasePath());
         foreach($files as $filename) {
@@ -143,7 +143,7 @@ class Symfony2Extension implements \Hal\Application\Extension\Extension {
                 $content = file_get_contents($filename);
                 if(preg_match("/const VERSION ='(.*?)';/", $content, $matches)) {
                     list(, $sfVersion) = $matches;
-                    $this->datas->symfony2->version = $sfVersion;
+                    $this->datas->symfony->version = $sfVersion;
                 }
                 break;
             }
@@ -186,4 +186,4 @@ class Symfony2Extension implements \Hal\Application\Extension\Extension {
 }
 
 
-return new Symfony2Extension();
+return new SymfonyExtension();

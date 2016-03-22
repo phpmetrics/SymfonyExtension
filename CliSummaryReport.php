@@ -1,5 +1,5 @@
 <?php
-namespace Extension\Symfony2;
+namespace Extension\Symfony;
 
 use Hal\Application\Extension\Reporter\Reporter;
 

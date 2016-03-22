@@ -1,18 +1,21 @@
-# PhpMetricsSymfony2Extension
+# PhpMetricsSymfonyExtension
 
-This plugin add Symfony2 support directly in your [PhpMetrics](https://github.com/phpmetrics/phpmetrics) reports.
+This plugin add Symfony support directly in your [PhpMetrics](https://github.com/phpmetrics/phpmetrics) reports.
 
-![Screenshot of PhpMetricsSymfony2Extension](https://cloud.githubusercontent.com/assets/1076296/13907012/9eebfd58-eee4-11e5-8fe0-6c3b5f6c81a1.png "Screenshot of PhpMetricsSymfony2Extension")
+![Screenshot of PhpMetricsSymfonyExtension](https://cloud.githubusercontent.com/assets/1076296/13907012/9eebfd58-eee4-11e5-8fe0-6c3b5f6c81a1.png "Screenshot of PhpMetricsSymfonyExtension")
 
 ## Installation
 
-Clone this repository anywhere
+**As phar archive**:
 
-    git clone https://github.com/phpmetrics/PhpMetricsSymfony2Extension.git <my-folder>
-    
-Then run PhpMetrics (>1.10) with the `--plugins` option:
+    wget https://raw.githubusercontent.com/phpmetrics/SymfonyExtension/master/symfony-extension.phar
+    phpmetrics --plugins=symfony-extension.phar --report-html=report.html <my-folder>
 
-    phpmetrics --plugins="/<my-folder>/Symfony2Extension.php"
+or **with Composer**:
+
+    composer require phpmetrics/phpmetrics phpmetrics/symfony-extension
+    ./vendor/bin/phpmetrics --plugins=./vendor/phpmetrics/symfony-extension/SymfonyExtension.php --report-html=report.html <my-folder>
+
     
 ## License
 

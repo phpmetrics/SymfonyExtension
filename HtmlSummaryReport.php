@@ -1,5 +1,5 @@
 <?php
-namespace Extension\Symfony2;
+namespace Extension\Symfony;
 
 use Hal\Application\Extension\Reporter\ReporterHtmlSummary;
 
@@ -21,18 +21,18 @@ class HtmlSummaryReport implements ReporterHtmlSummary {
 
     public function renderJs()
     {
-        return "document.getElementById('link-symfony2').onclick = function() { displayTab(this, 'symfony2')};";
+        return "document.getElementById('link-symfony').onclick = function() { displayTab(this, 'symfony')};";
     }
 
     public function renderHtml()
     {
         $html = <<<EOT
-<div class="tab" id="symfony2">
+<div class="tab" id="symfony">
 
     <div class="row">
         <h3>Symfony</h3>
         <p>
-            Version: {$this->datas->symfony2->version}
+            Version: {$this->datas->symfony->version}
         </p>
     </div>
 
@@ -157,7 +157,7 @@ EOT;
     public function getMenus()
     {
         return array(
-            'symfony2' => 'Symfony2'
+            'symfony' => 'Symfony'
         );
     }
 }
