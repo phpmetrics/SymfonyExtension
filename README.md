@@ -1,4 +1,4 @@
-# PhpMetricsSymfonyExtension
+# SymfonyExtension for PhpMetrics
 
 This plugin add Symfony support directly in your [PhpMetrics](https://github.com/phpmetrics/phpmetrics) reports.
 
